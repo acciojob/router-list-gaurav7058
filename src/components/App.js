@@ -1,26 +1,19 @@
-
 import React from "react";
 import './../styles/App.css';
-import { BrowserRouter , Routes, Route, Switch } from 'react-router-dom';
-import Links from "./Links";
-import Item1 from "./Item1";
-import Item2 from "./Item2";
-import Item3 from "./Item3";
-import Home from "./Home";
+import {BrowserRouter, Routes, Route}  from  "react-router-dom"
+import ItemList from "./ItemList";
+import ItemDetail from "./ItemDetail";
+
 
 const App = () => {
   return (
     <BrowserRouter>
-   
     <div>
-        <Routes>
-          <Route path="/" element={<Home></Home>}></Route>
-          <Route path="/item/:userId" element={<Item1></Item1>}></Route>
-          <Route path="/item/:userId" element={<Item2></Item2>}></Route>
-          <Route path="/item/:userId" element={<Item3></Item3>}></Route>
-        </Routes>
+      <Routes>
+        <Route path="/" element={<ItemList />}/>
+        <Route path="/items/:id" element={<ItemDetail />}/>
+      </Routes>
     </div>
-    <Links></Links>
     </BrowserRouter>
   )
 }
